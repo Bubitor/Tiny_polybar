@@ -2,5 +2,4 @@
 # script by phon31x & pietryszak
 #! /bin/bash
 
-u=$(xprop -name "Polybar tray window" _NET_WM_PID | grep -o '[[:digit:]]*')
-kill $u
+kill $(ps aux | grep tray | awk '{print $2}')
